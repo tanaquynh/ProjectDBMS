@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+:root {
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}            
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+.side-bar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    /* border-left: 10px solid var(--blue); */
+    transition: 0.5s;
+    overflow: hidden;
+}
+.side-bar.active {
+    width: 60px;
+}
+.side-bar ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.side-bar ul li {
+    position: relative;
+    width: 100%;
+}
+.side-bar ul li:hover {
+    background: var(--white);
+}
+.side-bar ul li:hover a,
+.side-bar ul li:hover .icon ion-icon {
+    color: var(--blue);
+}
+.side-bar ul li:nth-child(1):hover a,
+.side-bar ul li:nth-child(1):hover .icon ion-icon {
+    color: white;
+}
+.side-bar ul li:nth-child(1) {
+    margin-bottom: 20px;
+}
+.side-bar ul li:nth-child(1):hover{
+    background: transparent;
+}
+.side-bar ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.side-bar ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.side-bar ul li a .icon ion-icon {
+    color: var(--white);
+    font-size: 24px;
+}
+.side-bar ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;  
+    color: #5f5f5f     
+}
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .top-bar {
+    width: 100%;
+    background: var(--white);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main .top-bar .toggle {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle ion-icon {
+    width: 30px;
+    height: 30px;
+}
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label {
+    position: relative;
+    width: 100%;
+}
+.search label input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 40px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.search label ion-icon {
+    position: absolute;
+    left: 15px;
+    top: 4.4px;
+}
+.avt {
+    margin-right: 30px;
+    position: relative;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avt img {
+    height: 40px;
+    width: 40px;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.welcome-box {
+    position: relative;
+    width: 390px;
+    padding: 20px 40px;
+    background: var(--white);
+    color: rgba(0, 0, 0, 0.6);
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 80px;
+    height: 150px;
+}
+.welcome-box ion-icon {
+    width: 50px;
+    height: 50px;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+.employee {
+    display: grid;
+    position: relative;
+    padding: 20px;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+}
+.listBox {
+    position: relative;
+    display: grid;
+    max-height: 620px;
+    background: #fff;
+    padding: 20px;
+    overflow: hidden;
+}
+.listBox .table-title {
+    font-size: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+.listBox table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    
+}
+.listBox table thead tr {
+    font-size: 17px;   
+}
+.listBox table thead tr:hover {
+    background: #fff;  
+    color: #222;
+}
+.listBox table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)!important;
+    height: 40px;   
+}
+.listBox table tbody td {
+    font-weight: 500;
+}
+.listBox table tbody td ion-icon {
+    cursor: pointer;
+    float: right;
+    margin-right: 40px;
+}
+.listBox table tr:hover{
+    background: #2cbcff;
+    color: #fff;
+}
+.listBox table tbody tr:last-child {
+    border-bottom: none!important;
+}
+.listBox .btnBox {
+    height: 40px;  
+    margin-bottom: 20px; 
+}
+.btnBox .btn {
+    display: flex;
+    justify-content: right;
+
+}
+.btnBox .btn div {
+    background: #287bff;
+    padding: 10px;
+    margin-right: 5px;
+}
+.btnBox .btn .pre-btn {
+    margin-right: 5px;
+}
+.btnBox a {
+    text-decoration: none;
+    color: #fff;
+}
+.btn div.del-btn{
+    background: #ff4242;
+}
+.left-content-employee {
+    position: relative;
+    overflow: hidden;
+    
+}
+.change-employee {
+    background: #fff;
+    top: 0;
+    overflow: hidden;
+}
+.change-employee .title {
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+    color: #5f5f5f;
+}
+.change-employee .edit {
+    display: none;
+}
+.change-employee .add {
+    display: none;
+}
+.change-employee .add, .change-employee .edit {
+    position: absolute;
+    transition: 0.5s;
+    padding: 20px;
+    background: #fff;
+    width: 100%;
+}
+.change-employee .add.active, .change-employee .edit.active {
+    transition: 0.5s;
+    display: block;
+    position: relative;
+    background: #fff;
+    width: 100%;
+}
+.formBox form div #backtoadd {
+    margin-bottom: 0;
+}
+.change-employee .edit.active .submit {
+    height: 50px;
+}
+.btn-in-edit {
+    display: flex;
+    flex-direction: row;
+}
+.formBox form .btn-in-edit #submit, .btn-in-edit #backtoadd {
+    flex: 1;
+    margin: 5px;
+}
+.pop-up {
+    background: rgba(61, 61, 61, 0.685);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: -1;
+}
+.pop-up.active {
+    z-index: 1;
+}
+.pop-up-content {
+    position: relative;
+    width: 400px;
+    height: 130px;
+    margin: 250px calc(100%/2 - 150px);
+    padding: 20px;
+    color: #5f5f5f;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 3px solid #2cbcff;
+    transition: 0.5s;
+}
+.pop-up-content div {
+    margin-bottom: 10px;
+}
+.pop-up-content button {
+    background: #2cbcff;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    height: 30px;
+    margin-right: 5px;
+    float: right;
+    cursor: pointer;
+}
+.formBox form div {
+    margin-bottom: 10px;
+    height: 60px;
+}
+.formBox form input{
+    width: 100%;
+}
+.formBox form div label, select, .formBox form input{
+    display:block;
+    font-weight: 500;
+}
+select, .formBox form input, option {
+    height: 40px;
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #bebebe;
+}
+.formBox form div#submit {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.formBox form div#submit input, .formBox form div#backtoadd input {
+    background: #2c8efd;
+    border-style: none;
+    color: #fff;
+    cursor: pointer;
+}
+.nhat-ky {
+    margin: 20px;
+}
+.ket-qua-tim-kiem .listBox .button {
+    background: #2cbcff;
+    text-decoration: none;
+    height: 30px;
+    border: none;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+} 
+.ket-qua-tim-kiem {
+    margin: 20px;
+}
+.ket-qua-tim-kiem table tr:hover {
+    background: #fff;
+    color: #5f5f5f;
+}
+.salary-level {
+    margin: 20px;
+}
+.account {
+    width: 500px;
+    background: #fff;
+    margin: auto;
+    margin-top: 60px;
+    padding: 20px;
+}
+.account .title, .editSalary .title{
+    margin-bottom: 20px;
+}
+.editSalary {
+    width: 250px;
+    margin-top: auto;
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+.salary {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.login-container {
+    position: fixed;
+    background: #f5f5f5;
+    height: 100vmax;
+    width: 100vmax;
+    top: 0;
+}
+#login {
+    position: relative;
+    width: 450px;
+    margin: auto;
+    margin-top: 170px;
+    background: #ffffff;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+#login .formBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#login .formBox form div {
+    overflow: hidden;
+    margin: 20px 0;
+    height: 70px;
+}
+#login .formBox label {
+    float: left;
+    margin-right: 20px;
+}
+#login.formBox input {
+    float: right;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    font-size: 15px;
+}
+#login .title{
+    height: 20%;
+    text-align: center;
+}
+#login .formBox input[type=submit] {
+    position: relative;
+    width: 110px;
+    background: #287bff;
+    border-style: none;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.5s;
+}
+#login .formBox input[type=submit]:hover {
+    border: 2px solid #287bff;
+    color: #287bff;
+    background: white;
+}
+#login .formBox label {
+    padding-top: 10px;
+}
+#login .alert {
+    color: red;
+    font-weight: 400;
+    font-size: 14px;
+    width: 60%;
+    margin: 0!important;
+    display: none;
+}
