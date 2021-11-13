@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<?= "<title>".$data["title"] ."</title> "?>
-	<link rel="stylesheet" type="text/css" href="public/css/style.css">
-	<script src="public/js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="./public/css/style.css">
+	<script src="./public/js/scr.js"></script>
 </head>
 <body>
 	<div class="container">

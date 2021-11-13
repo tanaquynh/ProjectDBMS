@@ -6,9 +6,9 @@
 		}
 
 		public function checkUser() {
-			// $model = $this->model("LoginModel");
-			// $result = $model->checkUser($_POST["username"], $_POST["password"]);
-			// return $result;
+			$model = $this->model("LoginModel");
+			$result = json_decode($model->checkUser($_POST["username"], $_POST["password"]));
+			return $result;
 		}
 	}
 ?>

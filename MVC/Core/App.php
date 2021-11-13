@@ -9,7 +9,7 @@
 
 	    	//Lay cac gia tri user nhap vao thanh dia chi
 		    $arr = $this->getUrl();
-		    //print_r($arr);
+		    // print_r($arr);
 
 	    	//Xu ly Controller
 	    	if (isset($arr)) {
@@ -30,7 +30,7 @@
    			}
 
    			//Xu ly Params
-   			$params = $arr ? array_values($arr) : [];
+   			$this->params = $arr ? array_values($arr) : [];	
 			
 			
    			call_user_func_array([$this->controller, $this->action], $this->params);
